@@ -11,10 +11,14 @@ tags = %w( blue green yellow black)
 
 10.times do |n|
 
-tag_list = ""
+  tag_list = ""
 
   3.times do |i|
-    tag_list += "#{tags.sample}, "
+    if tag_list.empty?
+      tag_list = tags.sample
+    else
+      tag_list += ",#{tags.sample}"
+    end
   end
 
   priority = (1..5).to_a.sample
